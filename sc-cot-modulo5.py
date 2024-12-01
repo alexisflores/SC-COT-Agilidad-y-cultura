@@ -8,7 +8,7 @@ data = {
     "Proyectos Lanzados": [5, 8, 12, 15],
     "Objetivo OKR": [10, 10, 10, 10],  # Objetivo establecido
     "Colaboradores (Dept. A)": [3, 4, 6, 8],
-    "Colaboradores (Dept. B)": [2, 3, 4, 5],
+    "Colaboradores (Dept. B)": [2, 4, 6, 7],
 }
 
 df = pd.DataFrame(data)
@@ -16,7 +16,7 @@ df = pd.DataFrame(data)
 # Configuración del gráfico
 fig, ax = plt.subplots(figsize=(10, 6))
 
-# Barras apiladas
+# Crear las barras apiladas
 ax.bar(df["Trimestre"], df["Colaboradores (Dept. A)"], label="Dept. A", color="skyblue")
 ax.bar(
     df["Trimestre"],
@@ -26,25 +26,39 @@ ax.bar(
     color="lightgreen",
 )
 
-# Línea de progreso de proyectos
-ax.plot(df["Trimestre"], df["Proyectos Lanzados"], marker="o", label="Proyectos Lanzados", color="blue")
+# Agregar línea para Proyectos Lanzados
+ax.plot(df["Trimestre"], df["Proyectos Lanzados"], marker="o", label="Proyectos Lanzados", color="blue", linewidth=2)
 
-# Línea del objetivo
+# Línea del Objetivo OKR
 ax.axhline(y=10, color="red", linestyle="--", label="Objetivo OKR (10 proyectos)")
 
-# Configuración del gráfico
+# Etiquetas adicionales para contexto
+for idx, value in enumerate(df["Proyectos Lanzados"]):
+    ax.text(idx, value + 0.5, str(value), ha="center", fontsize=10, color="blue")
+
+# Título y etiquetas
 ax.set_title("Progreso Trimestral de Proyectos Colaborativos Interdisciplinarios", fontsize=14)
 ax.set_xlabel("Trimestre", fontsize=12)
 ax.set_ylabel("Número de Proyectos / Colaboradores", fontsize=12)
+
+# Añadir descripción del OKR y KPI en el gráfico
+description = (
+    "OKR: Incrementar proyectos colaborativos interdisciplinarios.\n"
+    "KPI: Número de proyectos colaborativos lanzados por trimestre.\n"
+    "Interpretación: Muestra el progreso respecto al objetivo y la participación de diferentes departamentos."
+)
+ax.text(0, -2, description, fontsize=10, color="gray", ha="left", wrap=True)
+
+# Mostrar la leyenda
 ax.legend()
 
 # Mostrar el gráfico en Streamlit
 st.pyplot(fig)
 
-# Información descriptiva del OKR y KPI
+# Información adicional sobre el OKR y KPI
 st.markdown("""
-### Información del OKR y KPI
+### Información Adicional
 - **OKR:** Incrementar proyectos colaborativos interdisciplinarios para fomentar la innovación.
 - **KPI:** Número de proyectos colaborativos lanzados por trimestre.
-- **Interpretación:** El gráfico muestra el número de proyectos lanzados y su comparación con el objetivo establecido. Las barras apiladas indican la distribución de colaboradores de diferentes departamentos, reflejando el nivel de interdisciplinariedad alcanzado en cada trimestre.
+- **Interpretación:** El gráfico ilustra el progreso hacia el objetivo trimestral, mostrando también la colaboración interdisciplinaria mediante barras apiladas por departamento.
 """)
