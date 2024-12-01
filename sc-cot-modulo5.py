@@ -44,13 +44,12 @@ ax.set_ylabel("Número de Proyectos / Colaboradores", fontsize=12)
 # Añadir descripción del OKR y KPI en el gráfico
 description = (
     "OKR: Incrementar proyectos colaborativos interdisciplinarios.\n"
-    "OKR: Incrementar proyectos colaborativos interdisciplinarios.\n"
     "KPI: Número de proyectos colaborativos lanzados por trimestre.\n"
     "Interpretación: Muestra el progreso respecto al objetivo y la participación de diferentes departamentos."
 )
-ax.text(0, 2, description, fontsize=10, color="gray", ha="left", wrap=True)
+ax.text(0, -1, description, fontsize=10, color="gray", ha="left", wrap=True)
 
-# Mostrar la leyenda
+# Mostrar la leyend4
 ax.legend()
 
 # Mostrar el gráfico en Streamlit
