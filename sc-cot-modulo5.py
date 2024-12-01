@@ -58,6 +58,8 @@ st.pyplot(fig)
 # Información adicional sobre el OKR y KPI
 st.markdown("""
 ### Información Adicional
+- ** -** 
+- ** -** 
 - **OKR:** Incrementar proyectos colaborativos interdisciplinarios para fomentar la innovación.
 - **KPI:** Número de proyectos colaborativos lanzados por trimestre.
 - **Interpretación:** El gráfico ilustra el progreso hacia el objetivo trimestral, mostrando también la colaboración interdisciplinaria mediante barras apiladas por departamento.
