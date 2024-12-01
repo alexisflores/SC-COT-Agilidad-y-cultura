@@ -48,7 +48,7 @@ description = (
     "KPI: Número de proyectos colaborativos lanzados por trimestre.\n"
     "Interpretación: Muestra el progreso respecto al objetivo y la participación de diferentes departamentos."
 )
-ax.text(0, -2, description, fontsize=10, color="gray", ha="left", wrap=True)
+ax.text(0, 2, description, fontsize=10, color="gray", ha="left", wrap=True)
 
 # Mostrar la leyenda
 ax.legend()
