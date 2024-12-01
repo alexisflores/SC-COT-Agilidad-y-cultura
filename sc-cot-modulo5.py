@@ -43,7 +43,7 @@ ax.set_ylabel("Número de Proyectos / Colaboradores", fontsize=12)
 
 # Añadir descripción del OKR y KPI en el gráfico
 description = (
-    " .\n.\n"
+    "OKR: Incrementar proyectos colaborativos interdisciplinarios.\n"
     "OKR: Incrementar proyectos colaborativos interdisciplinarios.\n"
     "KPI: Número de proyectos colaborativos lanzados por trimestre.\n"
     "Interpretación: Muestra el progreso respecto al objetivo y la participación de diferentes departamentos."
