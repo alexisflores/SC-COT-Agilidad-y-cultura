@@ -1,0 +1,34 @@
+import pandas as pd
+import numpy as np
+import os
+
+# Parameters
+num_rows = 1000
+
+# Generate synthetic data
+np.random.seed(42)
+data = {
+    "user_id": np.random.randint(1000, 2000, num_rows),
+    "session_duration": np.random.uniform(1, 300, num_rows),
+    "pages_visited": np.random.randint(1, 20, num_rows),
+    "items_added_to_cart": np.random.randint(0, 10, num_rows),
+    "items_purchased": np.random.randint(0, 5, num_rows),
+    "cart_value": np.random.uniform(0, 500, num_rows),
+    "bounce_rate": np.random.uniform(0, 100, num_rows),
+    "device_type": np.random.choice(["mobile", "desktop", "tablet"], num_rows),
+    "time_of_day": np.random.choice(["morning", "afternoon", "evening", "night"], num_rows),
+    "day_of_week": np.random.choice(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], num_rows),
+    "user_location": np.random.choice(["urban", "suburban", "rural"], num_rows),
+    "purchase_made": np.random.choice([0, 1], num_rows, p=[0.7, 0.3]),
+}
+
+# Create a DataFrame
+synthetic_df = pd.DataFrame(data)
+
+# Save the dataset
+synthetic_df.to_csv("synthetic_ecommerce_data.csv", index=False)
+print("Synthetic dataset created: synthetic_ecommerce_data.csv")
+from google.colab import files
+
+# Descargar el archivo generado
+files.download("synthetic_ecommerce_data.csv")
