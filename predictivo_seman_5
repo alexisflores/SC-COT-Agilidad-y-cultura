@@ -140,4 +140,25 @@ Bounce Rate: 46.84%
 The predicted bounce rate for the provided session details is approximately 46.84%.
 Purchase Made: No (0)
 Based on the input data, it is predicted that no purchase will be made during this session.
- 
+
+
+
+
+Para predecir bounce_rate:
+
+session_duration (Duración de la sesión en segundos, ejemplo: 120.5)
+pages_visited (Número de páginas visitadas, ejemplo: 5)
+items_added_to_cart (Número de productos añadidos al carrito, ejemplo: 3)
+time_of_day (Momento del día: morning, afternoon, evening, night)
+day_of_week (Día de la semana: Monday, Tuesday, ..., Sunday)
+device_type (Tipo de dispositivo: mobile, desktop, tablet)
+
+Para predecir purchase_made:
+
+session_duration (Duración de la sesión en segundos, ejemplo: 120.5)
+pages_visited (Número de páginas visitadas, ejemplo: 5)
+items_added_to_cart (Número de productos añadidos al carrito, ejemplo: 3)
+cart_value (Valor total del carrito, ejemplo: 150.0)
+time_of_day (Momento del día: morning, afternoon, evening, night)
+day_of_week (Día de la semana: Monday, Tuesday, ..., Sunday)
+device_type (Tipo de dispositivo: mobile, desktop, tablet)
